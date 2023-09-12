@@ -3,7 +3,7 @@
 #include "main.h"
 #endif
 
-void print_alphabet(void)
+int print_alphabet(void)
 {
 	char start = 'a';
 	char end = 'z';
@@ -12,4 +12,6 @@ void print_alphabet(void)
 	{
 		_putchar(start);
 	}
+
+	return (0);
 }
