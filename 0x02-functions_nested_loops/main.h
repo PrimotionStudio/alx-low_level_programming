@@ -1,3 +1,4 @@
+int print_sign(int n);
 int _isalpha(int c);
 int _putchar(char c);
 void print_alphabet();
