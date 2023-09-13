@@ -1,3 +1,4 @@
+void jack_bauer(void);
 int print_last_digit(int);
 int _abs(int);
 int print_sign(int n);
