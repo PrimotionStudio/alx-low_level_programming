@@ -2,7 +2,6 @@
 
 /**
   * print_numbers - print numbers from 0 to 9
-  * @c: the placeholder for 0-9
   */
 void print_numbers(void)
 {
