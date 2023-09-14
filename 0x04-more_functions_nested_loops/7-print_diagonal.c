@@ -1,29 +1,29 @@
 #include "main.h"
 
 /**
-  * print_line - print numbers from 0 to 9
+  * print_diagonal - print numbers from 0 to 9
   * @n: argument
   */
-void print_line(int n)
+void print_diagonal(int n)
 {
 	int i;
 	int j;
 
-	for (i = 1; i <= n; i++)
+	if (n <= 0)
 	{
-		for (j = 2; j <= i; j++)
+		_putchar('\n');
+	}
+	else
+	{
+		for (i = 0; i < n; i++)
 		{
-			putchar(' ');
-		}
+			for (j = 0; j < i; j++)
+			{
+				_putchar(' ');
+			}
 
-		if (i != 5)
-		{
-			putchar('\\');
-			putchar('\n');
-		}
-		else
-		{
-			putchar('\\');
+			_putchar('\\');
+			_putchar('\n');
 		}
 	}
 }
