@@ -24,7 +24,7 @@ void puts_half(char *str)
 		}
 		else
 		{
-			if (i >= ((len / 2) - 1))
+			if (i >= ((len - 1) / 2))
 			{
 				_putchar(str[i]);
 			}
