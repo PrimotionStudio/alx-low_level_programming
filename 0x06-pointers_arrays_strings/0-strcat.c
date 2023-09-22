@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
-  * strcat - Entry point
+  * _strcat - Entry point
   * @dest: arg1
   * @src: arg2
   * Return: concatinated string
