@@ -11,31 +11,33 @@
 char *_strncpy(char *dest, char *src, int n)
 {
 	int slen = 0;
-	int i = 0;
-
-	while (src[i] != '\0')
+	int spos;
+	
+	while (src[slen] != 0)
 	{
-		i++;
+		slen++;
 	}
-	if (n < i)
+
+	if (n < slen)
 	{
-		for (; slen < n; slen++)
+		for (spos = 0; spos < n; spos++)
 		{
-			if (src[slen] != '\0')
+			if (src[spos] != '\0')
 			{
-				dest[slen] = src[slen];
-				slen++;
+				dest[spos] = src[spos];
 			}
 		}
 	}
 	else
 	{
-		while (src[slen] != '\0')
+		spos = 0;
+		while (src[spos] != '\0')
 		{
-			dest[slen] = src[slen];
-			slen++;
+			dest[spos] = src[spos];
+			spos++;
 		}
 	}
+
 	dest[slen] = '\0';
 
 	return (dest);
