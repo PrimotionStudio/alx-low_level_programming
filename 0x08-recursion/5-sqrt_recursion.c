@@ -1,12 +1,16 @@
 #include "main.h"
 
-int _sqrt_(int n, int guess);
-
 /**
   * _sqrt_recursion - Entry Point
   * @n: arg
+  * @guess: arg
+  * Return: ret
+  * @n: arg
   * Return : ret
   */
+
+int _sqrt_(int n, int guess);
+
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
