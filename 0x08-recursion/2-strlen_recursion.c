@@ -3,7 +3,7 @@
 /**
   * _strlen_recursion - Entry point
   * @s: arg
-  * return: num
+  * Return: num
   */
 int _strlen_recursion(char *s)
 {
