@@ -1,3 +1,5 @@
+#ifndef POPPY
+#define POPPY
 /**
   * struct dog - dog structure
   * @name: arg
@@ -11,3 +13,4 @@ struct dog
 	float age;
 	char *owner;
 };
+#endif
