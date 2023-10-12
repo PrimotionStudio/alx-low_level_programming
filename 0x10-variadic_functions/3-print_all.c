@@ -18,7 +18,7 @@ void print_all(const char * const format, ...)
 	{
 		if (pflag != 0)
 			printf(", ");
-		switch(format[i])
+		switch (format[i])
 		{
 			case 'c':
 				printf("%c", va_arg(str, int));
