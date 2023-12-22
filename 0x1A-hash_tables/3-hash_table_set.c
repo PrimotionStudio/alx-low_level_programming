@@ -30,7 +30,7 @@ hash_node_t *pair_hn(char *key, char *value)
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int array_index;
-	hash_node_t *my_hn = NULL, *prev = NULL;
+	hash_node_t *my_hn = NULL, *new = NULL;
 	char *ky, *val;
 
 	if (ht == NULL)
@@ -47,20 +47,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[array_index] = my_hn;
 		return (1);
 	}
-	while (my_hn != NULL)
-	{
-		/* A key is found: Replace value */
-		if (my_hn->key == ky)
-		{
-			my_hn->value = val;
-			return (1);
-		}
-		prev = my_hn;
-		my_hn = my_hn->next;
-	}
-	my_hn = pair_hn(ky, val);
-	if (my_hn == NULL)
+	new = pair_hn(ky, val);
+	if (new == NULL)
 		return (0);
-	prev->next = my_hn;
+	new->next = my_hn;
+	ht->array[array_index] = new;
 	return (1);
 }
