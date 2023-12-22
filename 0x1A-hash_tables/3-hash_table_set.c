@@ -9,11 +9,13 @@
  */
 hash_node_t *pair_hn(char *key, char *value)
 {
-	hash_node_t *new_hn = malloc(sizeof(hash_node_t));
+	hash_node_t *new_hn;
+
+	new_hn = malloc(sizeof(hash_node_t));
 	if (new_hn == NULL)
 		return (NULL);
-	new_hn->key = key;
-	new_hn->value = value;
+	new_hn->key = strdup(key);
+	new_hn->value = strdup(value);
 	new_hn->next = NULL;
 	return (new_hn);
 }
@@ -31,6 +33,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *my_hn = NULL, *prev = NULL;
 	char *ky, *val;
 
+	if (ht == NULL)
+		return (0);
 	ky = (char *)key;
 	val = (char *)value;
 	array_index = hash_djb2((const unsigned char *)ky) % ht->size;
