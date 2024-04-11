@@ -14,52 +14,23 @@ int jump_search(int *array, size_t size, int value)
 	/*
 	Risk of infinite loop
 	*/
-	while (1)
+	while (top <= _size)
 	{
 		/*
-		printf("base=>%d | top=>%d | size=>%d | jump_size=>%d | jumps=>%d\n", base, top, _size, jump_size, jumps);
+		printf("base=>%d | top=>%d | size=>%d |
+		jump_size=>%d | jumps=>%d\n", base,
+		top, _size, jump_size, jumps);
 		*/
 		printf("Value checked array[%d] = [%d]\n", base, array[base]);
-		if (top >= _size)
-		{
-
-			i = base;
-			
-			printf("base=>%d | top=>%d | size=>%d | jump_size=>%d | jumps=>%d\n", base, top, _size, jump_size, jumps);
-			
-			printf("Value found between indexes [%d] and [%d] ->4\n", base, top);
-			while (i <= top - _size)
-			{
-				printf("Value checked array[%d] = [%d]\n", i, array[i]);
-				if (array[i] == value)
-					return (i);
-				i++;
-			}
-			break;
-		}
-		else if (array[top] >= value)
+		if (array[top] >= value)
 		{
 			i = base;
 			/*
-			printf("base=>%d | top=>%d | size=>%d | jump_size=>%d | jumps=>%d\n", base, top, _size, jump_size, jumps);
+			printf("base=>%d | top=>%d | size=>%d |
+			jump_size=>%d | jumps=>%d\n", base,
+			top, _size, jump_size, jumps);
 			*/
-			printf("Value found between indexes [%d] and [%d] ->2\n", base, top);
-			while (i <= top)
-			{
-				printf("Value checked array[%d] = [%d]\n", i, array[i]);
-				if (array[i] == value)
-					return (i);
-				i++;
-			}
-			return (-1);
-		}
-		else if (array[top] < value && (top + jump_size + 1) > _size)
-		{
-			i = base;
-			/*
-			printf("base=>%d | top=>%d | size=>%d | jump_size=>%d | jumps=>%d\n", base, top, _size, jump_size, jumps);
-			*/
-			printf("Value found between indexes [%d] and [%d] ->3\n", base, top);
+			printf("Value found between indexes [%d] and [%d]\n", base, top);
 			while (i <= top)
 			{
 				printf("Value checked array[%d] = [%d]\n", i, array[i]);
@@ -72,6 +43,25 @@ int jump_search(int *array, size_t size, int value)
 		base += jump_size;
 		top += jump_size;
 		jumps++;
+	}
+	if (top > _size)
+	{
+		i = base;
+		/*
+		printf("base=>%d | top=>%d | size=>%d |
+		jump_size=>%d | jumps=>%d\n", base,
+		top, _size, jump_size, jumps);
+		*/
+		printf("Value checked array[%d] = [%d]\n", base, array[base]);
+		printf("Value found between indexes [%d] and [%d]\n", base, top);
+		while (array[i] && i < _size)
+		{
+			printf("Value checked array[%d] = [%d]\n", i, array[i]);
+			if (array[i] == value)
+				return (i);
+			i++;
+		}
+		return (-1);
 	}
 	return (-1);
 }
